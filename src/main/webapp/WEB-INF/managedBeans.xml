@@ -1,0 +1,29 @@
+ <faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              version="2.2">
+ <managed-bean>
+ <managed-bean-name>selecCursosBean</managed-bean-name>
+ <managed-bean-class>
+ com.giitic.bean.SelecCursosBean
+ </managed-bean-class>
+ <managed-bean-scope>session</managed-bean-scope>
+ 
+ <managed-property>
+ <property-name>email</property-name>
+ <value>Introduce to email</value>
+ </managed-property>
+ </managed-bean>
+ 
+  <managed-bean>
+ <managed-bean-name>loginController</managed-bean-name>
+ <managed-bean-class>
+ com.giitic.controllerBean.LoginController
+ </managed-bean-class>
+ <managed-bean-scope>session</managed-bean-scope>
+ <managed-property>
+ <property-name>selecCursosBean</property-name>
+ <value>#{selecCursosBean}</value>
+ </managed-property>
+ </managed-bean>
+ 
+
+</faces-config>

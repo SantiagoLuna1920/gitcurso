@@ -1,0 +1,23 @@
+ <faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              version="2.2">
+ <navigation-rule>
+ <from-view-id>/selec-cursos.xhtml</from-view-id>
+ <navigation-case>
+ <from-outcome>success</from-outcome>
+ <to-view-id>/welcome.xhtml</to-view-id>
+ </navigation-case>
+ <navigation-case>
+ <from-outcome>failure</from-outcome>
+ <to-view-id>/selec-cursos.xhtml</to-view-id>
+ </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+ <navigation-case>
+ <from-action>#{loginController.cerrarSesion}</from-action>
+ <from-outcome>success</from-outcome>
+ <to-view-id>/selec-cursos.xhtml</to-view-id>
+ </navigation-case>
+ </navigation-rule>
+
+</faces-config>

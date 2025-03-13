@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+<h:head>
+    <title>Selección de Cursos</title>
+     <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/styles/style.css" />
+</h:head>
+ <h:body>
+ <h:form>
+ <table>
+ <tr>
+ <td>Dirección e-mail:</td>
+ <td>
+  <h:inputText value="#{selecCursosBean.email}" />
+ </td>
+ <td>Contraseña: </td>
+ <td>
+ <h:inputSecret id="password" value="#{selecCursosBean.password}">
+ <f:validateRegex
+ pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"/>
+ </h:inputSecret>
+ </td>
+ </tr>
+ <tr>
+ <td>Tecnología Java de interés</td>
+ <td><h:selectOneMenu
+ value="#{selecCursosBean.curso}">
+ <f:selectItem itemValue="Struts" itemLabel="Struts" />
+ <f:selectItem itemValue="JSF" itemLabel="JSF" />
+  <f:selectItem itemValue="JSP" itemLabel="Servlets y JSP" />
+ <f:selectItem itemValue="JPA" itemLabel="JPA" />
+ </h:selectOneMenu></td>
+ </tr>
+ </table>
+<h:commandButton value="Enviar"
+ action="#{selecCursosBean.procesar}"/>
+ <h:outputText value="Curso seleccionado: #{selecCursosBean.mensaje}" style="color: blue" />
+<br/>
+ <br/>
+ <h:commandButton value="ingresar" label="Login"
+ action="#{loginController.verificarUsuario}"/>
+ <h:outputText value="#{loginController.mensaje}" style="color: red" />
+ </h:form>
+ </h:body>
+ </html>
